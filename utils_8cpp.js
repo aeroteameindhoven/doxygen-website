@@ -1,0 +1,28 @@
+var utils_8cpp =
+[
+    [ "getCurrentTopSide", "utils_8cpp.html#aa5a4ad41672e34b955e2083373e51e25", null ],
+    [ "getErrorName", "utils_8cpp.html#a2acc041b2705cffbc7f401b8499fffb2", null ],
+    [ "getMotorCurrentSafe", "utils_8cpp.html#a13475c40cd95cefe607c9c080ed1fc7b", null ],
+    [ "getMotorName", "utils_8cpp.html#aba5631ebd2b58b9b75b5e636e548da14", null ],
+    [ "getMotorPositionSafe", "utils_8cpp.html#a63cbcbe2f3db8f6dc80fa6c44e9db99f", null ],
+    [ "getMotorPositionUnsafe", "utils_8cpp.html#adbd3f9bd5090a7e8bb2e1e96a845c52f", null ],
+    [ "isSideLocked", "utils_8cpp.html#a900593b01edf54f6fabbbf325885ceea", null ],
+    [ "levelBattery", "utils_8cpp.html#a449469bad0378587b37c56d1052a4f3a", null ],
+    [ "lockSide", "utils_8cpp.html#a73c76ab5b0301b12b9137a66980d70a1", null ],
+    [ "moveLiftByOffsetSafe", "utils_8cpp.html#a136826ae3870997d1c389901a124e113", null ],
+    [ "moveLiftToPositionsSafe", "utils_8cpp.html#ae6be8170896d5ef4119fd9445d6dcf99", null ],
+    [ "moveMotorByOffsetSafe", "utils_8cpp.html#a25f86533c5849e14632cd87e4e7aa4b7", null ],
+    [ "moveMotorToPositionSafe", "utils_8cpp.html#a45b79b651e226736b9e8d1858aec4573", null ],
+    [ "resetLiftHomingOffsetSafe", "utils_8cpp.html#aae6d68bfa374f83cc7e1c2a8d96f2236", null ],
+    [ "rotateToOppositeSide", "utils_8cpp.html#aaefcc01b51442e14a1ad200dfe1a6908", null ],
+    [ "rotateToSide", "utils_8cpp.html#ae8bca1f2e22b5a1b54a1e0a57e798962", null ],
+    [ "setOperatingModeSafe", "utils_8cpp.html#a4211dfc775f4c649ee982b937ccb804a", null ],
+    [ "stopAllMotorsUnsafe", "utils_8cpp.html#a0dde07316a9983b64344cc82e1d1f610", null ],
+    [ "switchLockOnSide", "utils_8cpp.html#a52555ac81ad0b619076b8592ed5d2816", null ],
+    [ "switchLockTopSide", "utils_8cpp.html#a46d2050d4d9b3e20f812dcbd59fbe316", null ],
+    [ "turnTorqueOffSafe", "utils_8cpp.html#a9f2c51a840bbd0d387594efd39859499", null ],
+    [ "turnTorqueOnSafe", "utils_8cpp.html#aa73130a283f85d4e6d979a28e71320de", null ],
+    [ "unlockSide", "utils_8cpp.html#a2fcc499631950121c77f2f660d1d8183", null ],
+    [ "waitForLifts", "utils_8cpp.html#a11fec93c31ea31787dcf511865d1dafd", null ],
+    [ "writeControlTableItemSafe", "utils_8cpp.html#a9a421a42821790875338e34dcd7542e3", null ]
+];
