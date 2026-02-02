@@ -5,6 +5,7 @@ var BS__DETACHABLE__full__manual__control_8ino =
     [ "sequence", "BS__DETACHABLE__full__manual__control_8ino.html#ad0bc5605a4658a88971c79432f702183", null ],
     [ "setup", "BS__DETACHABLE__full__manual__control_8ino.html#a4fc01d736fe50cf5b977f755b675f11d", null ],
     [ "setupMotors", "BS__DETACHABLE__full__manual__control_8ino.html#a0ee72dcdcd7166d35e14fe44fca09252", null ],
+    [ "swapIndefinitely", "BS__DETACHABLE__full__manual__control_8ino.html#a0b18b690248633c7ebadafca3f735b57", null ],
     [ "vTaskLogging", "BS__DETACHABLE__full__manual__control_8ino.html#a09c10cdae70f7fdb7c2f3f0929a1253b", null ],
     [ "vTaskLoop", "BS__DETACHABLE__full__manual__control_8ino.html#a98ab11345ca0d4d32c4c098a6baf5911", null ],
     [ "vTaskSetup", "BS__DETACHABLE__full__manual__control_8ino.html#a075cb87ee805f60f90814ccea09ad6b9", null ]

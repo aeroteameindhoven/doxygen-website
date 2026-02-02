@@ -13,6 +13,7 @@ var searchData=
   ['side2_5flocked_10',['SIDE2_LOCKED',['../structBS__STATE.html#ad7e8710ca3d923b342e914b1b512f76a',1,'BS_STATE']]],
   ['side2_5fpos_11',['SIDE2_POS',['../bs__common_8cpp.html#a3b6ec90263da047475e9b0fe9f641f69',1,'SIDE2_POS():&#160;bs_common.cpp'],['../bs__common_8h.html#a3b6ec90263da047475e9b0fe9f641f69',1,'SIDE2_POS():&#160;bs_common.cpp']]],
   ['stopallmotorsunsafe_12',['stopAllMotorsUnsafe',['../utils_8cpp.html#a0dde07316a9983b64344cc82e1d1f610',1,'stopAllMotorsUnsafe():&#160;utils.cpp'],['../utils_8h.html#a0dde07316a9983b64344cc82e1d1f610',1,'stopAllMotorsUnsafe():&#160;utils.cpp']]],
-  ['switchlockonside_13',['switchLockOnSide',['../utils_8cpp.html#a52555ac81ad0b619076b8592ed5d2816',1,'switchLockOnSide(SIDE side):&#160;utils.cpp'],['../utils_8h.html#a52555ac81ad0b619076b8592ed5d2816',1,'switchLockOnSide(SIDE side):&#160;utils.cpp']]],
-  ['switchlocktopside_14',['switchLockTopSide',['../utils_8cpp.html#a46d2050d4d9b3e20f812dcbd59fbe316',1,'switchLockTopSide():&#160;utils.cpp'],['../utils_8h.html#a46d2050d4d9b3e20f812dcbd59fbe316',1,'switchLockTopSide():&#160;utils.cpp']]]
+  ['swapindefinitely_13',['swapIndefinitely',['../BS__DETACHABLE__full__manual__control_8ino.html#a0b18b690248633c7ebadafca3f735b57',1,'BS_DETACHABLE_full_manual_control.ino']]],
+  ['switchlockonside_14',['switchLockOnSide',['../utils_8cpp.html#a52555ac81ad0b619076b8592ed5d2816',1,'switchLockOnSide(SIDE side):&#160;utils.cpp'],['../utils_8h.html#a52555ac81ad0b619076b8592ed5d2816',1,'switchLockOnSide(SIDE side):&#160;utils.cpp']]],
+  ['switchlocktopside_15',['switchLockTopSide',['../utils_8cpp.html#a46d2050d4d9b3e20f812dcbd59fbe316',1,'switchLockTopSide():&#160;utils.cpp'],['../utils_8h.html#a46d2050d4d9b3e20f812dcbd59fbe316',1,'switchLockTopSide():&#160;utils.cpp']]]
 ];
