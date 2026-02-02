@@ -12,6 +12,7 @@ var utils_8h =
     [ "moveLiftByOffsetSafe", "utils_8h.html#a136826ae3870997d1c389901a124e113", null ],
     [ "moveLiftToPositionsSafe", "utils_8h.html#ae6be8170896d5ef4119fd9445d6dcf99", null ],
     [ "moveMotorByOffsetSafe", "utils_8h.html#a25f86533c5849e14632cd87e4e7aa4b7", null ],
+    [ "moveMotorByOffsetUnsafe", "utils_8h.html#adc17afdd1148f30d6242b41aa4be66b1", null ],
     [ "moveMotorToPositionSafe", "utils_8h.html#a45b79b651e226736b9e8d1858aec4573", null ],
     [ "resetLiftHomingOffsetSafe", "utils_8h.html#aae6d68bfa374f83cc7e1c2a8d96f2236", null ],
     [ "rotateToOppositeSide", "utils_8h.html#aaefcc01b51442e14a1ad200dfe1a6908", null ],

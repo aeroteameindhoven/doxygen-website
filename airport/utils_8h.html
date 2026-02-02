@@ -115,6 +115,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a25f86533c5849e14632cd87e4e7aa4b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a25f86533c5849e14632cd87e4e7aa4b7">moveMotorByOffsetSafe</a> (uint8_t motor_id, float offset)</td></tr>
 <tr class="memdesc:a25f86533c5849e14632cd87e4e7aa4b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves a motor to by specified offset safely by suspending other tasks.  <a href="utils_8h.html#a25f86533c5849e14632cd87e4e7aa4b7">More...</a><br /></td></tr>
 <tr class="separator:a25f86533c5849e14632cd87e4e7aa4b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc17afdd1148f30d6242b41aa4be66b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#adc17afdd1148f30d6242b41aa4be66b1">moveMotorByOffsetUnsafe</a> (uint8_t motor_id, float offset)</td></tr>
+<tr class="memdesc:adc17afdd1148f30d6242b41aa4be66b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves a motor to by specified offset.  <a href="utils_8h.html#adc17afdd1148f30d6242b41aa4be66b1">More...</a><br /></td></tr>
+<tr class="separator:adc17afdd1148f30d6242b41aa4be66b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a136826ae3870997d1c389901a124e113"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a136826ae3870997d1c389901a124e113">moveLiftByOffsetSafe</a> (float offset)</td></tr>
 <tr class="memdesc:a136826ae3870997d1c389901a124e113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves both lifting motors (setscrews) by specified offset safely by suspending other tasks.  <a href="utils_8h.html#a136826ae3870997d1c389901a124e113">More...</a><br /></td></tr>
 <tr class="separator:a136826ae3870997d1c389901a124e113"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -486,6 +489,43 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Moves a motor to by specified offset safely by suspending other tasks. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">motor_id</td><td>ID of the motor to move. </td></tr>
+    <tr><td class="paramname">offset</td><td>Offset to add to the current position. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adc17afdd1148f30d6242b41aa4be66b1" name="adc17afdd1148f30d6242b41aa4be66b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc17afdd1148f30d6242b41aa4be66b1">&#9670;&#160;</a></span>moveMotorByOffsetUnsafe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void moveMotorByOffsetUnsafe </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>motor_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Moves a motor to by specified offset. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">motor_id</td><td>ID of the motor to move. </td></tr>
