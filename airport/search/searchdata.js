@@ -7,7 +7,7 @@ var indexSectionsWithContent =
   4: "bcdlstuw",
   5: "cls",
   6: "bdeisw",
-  7: "dl"
+  7: "bdl"
 };
 
 var indexSectionNames =

@@ -1,12 +1,14 @@
 var bs__common_8h =
 [
     [ "BS_STATE", "structBS__STATE.html", "structBS__STATE" ],
+    [ "BS_BUILD_CONTROL_MODE", "bs__common_8h.html#a59dea9eb01577dfee240fb134cb3f965", null ],
     [ "DEBUG_SERIAL", "bs__common_8h.html#a61e127df60d55ea4c8bd6b8ec1f88367", null ],
     [ "DXL_SERIAL", "bs__common_8h.html#af5240a49e70ff6e269be7c077059cfe0", null ],
     [ "LOCATION", "bs__common_8h.html#ac27b81440ce6781d5bfcab7a9bbdef99", null ],
     [ "ControlMode", "bs__common_8h.html#aee3ea37f4f505980157cf93a84687bcb", [
       [ "BS_MODE_MANUAL", "bs__common_8h.html#aee3ea37f4f505980157cf93a84687bcba335d218edfc67e15727c438910f588db", null ],
-      [ "BS_MODE_AUTO", "bs__common_8h.html#aee3ea37f4f505980157cf93a84687bcba6f2515722713681abc0b39c503daaf48", null ]
+      [ "BS_MODE_AUTO", "bs__common_8h.html#aee3ea37f4f505980157cf93a84687bcba6f2515722713681abc0b39c503daaf48", null ],
+      [ "BS_MODE_TEST", "bs__common_8h.html#aee3ea37f4f505980157cf93a84687bcbaf652763d38f9eab20b52536112cf131a", null ]
     ] ],
     [ "LOG_LEVEL", "bs__common_8h.html#aa5a9053636a30269210c54e734e0d583", [
       [ "DEBUG", "bs__common_8h.html#aa5a9053636a30269210c54e734e0d583a0593585da9181e972974c1274d8f2b4f", null ],
