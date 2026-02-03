@@ -89,11 +89,137 @@ $(document).ready(function(){initNavTree('watchdog_8cpp.html',''); initResizable
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">watchdog.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="watchdog_8h_source.html">../include/watchdog.h</a>&quot;</code><br />
-</div></div><!-- contents -->
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a0ceebcabbcebae106d0e6f813385b8ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="watchdog_8cpp.html#a0ceebcabbcebae106d0e6f813385b8ae">vTaskWatchdog</a> (void *parameter)</td></tr>
+<tr class="memdesc:a0ceebcabbcebae106d0e6f813385b8ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Watchdog task that periodically perfoms a healthcheck.  <a href="watchdog_8cpp.html#a0ceebcabbcebae106d0e6f813385b8ae">More...</a><br /></td></tr>
+<tr class="separator:a0ceebcabbcebae106d0e6f813385b8ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98505487400d33cd5e6d51ab2feae8e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="watchdog_8cpp.html#a98505487400d33cd5e6d51ab2feae8e2">healthcheck</a> ()</td></tr>
+<tr class="memdesc:a98505487400d33cd5e6d51ab2feae8e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a healthcheck by pinging all motors.  <a href="watchdog_8cpp.html#a98505487400d33cd5e6d51ab2feae8e2">More...</a><br /></td></tr>
+<tr class="separator:a98505487400d33cd5e6d51ab2feae8e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9f6f90f4a122d9c9498a7dfe4a3ddcb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="watchdog_8cpp.html#aa9f6f90f4a122d9c9498a7dfe4a3ddcb">checkMotorsCurrent</a> ()</td></tr>
+<tr class="memdesc:aa9f6f90f4a122d9c9498a7dfe4a3ddcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the current drawn by all motors.  <a href="watchdog_8cpp.html#aa9f6f90f4a122d9c9498a7dfe4a3ddcb">More...</a><br /></td></tr>
+<tr class="separator:aa9f6f90f4a122d9c9498a7dfe4a3ddcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa23de340eeb4c41d9201ab6df131bc6b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="watchdog_8cpp.html#aa23de340eeb4c41d9201ab6df131bc6b">pingMotors</a> ()</td></tr>
+<tr class="memdesc:aa23de340eeb4c41d9201ab6df131bc6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Motor healthcheck.  <a href="watchdog_8cpp.html#aa23de340eeb4c41d9201ab6df131bc6b">More...</a><br /></td></tr>
+<tr class="separator:aa23de340eeb4c41d9201ab6df131bc6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a6d2462128c73d0cc056869423fdd4e51"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="watchdog_8cpp.html#a6d2462128c73d0cc056869423fdd4e51">MAX_CURRENT</a> =300</td></tr>
+<tr class="separator:a6d2462128c73d0cc056869423fdd4e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="aa9f6f90f4a122d9c9498a7dfe4a3ddcb" name="aa9f6f90f4a122d9c9498a7dfe4a3ddcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9f6f90f4a122d9c9498a7dfe4a3ddcb">&#9670;&#160;</a></span>checkMotorsCurrent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int checkMotorsCurrent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks the current drawn by all motors. </p>
+<p >If any motor draws more than 150mA, it is considered a fault. </p><dl class="section return"><dt>Returns</dt><dd>Index of the first motor that exceeded the current limit, or -1 if all motors are within limits. </dd></dl>
+
+</div>
+</div>
+<a id="a98505487400d33cd5e6d51ab2feae8e2" name="a98505487400d33cd5e6d51ab2feae8e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98505487400d33cd5e6d51ab2feae8e2">&#9670;&#160;</a></span>healthcheck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void healthcheck </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Performs a healthcheck by pinging all motors. </p>
+<p >If any motor fails to respond, the main loop task is suspended. </p>
+
+</div>
+</div>
+<a id="aa23de340eeb4c41d9201ab6df131bc6b" name="aa23de340eeb4c41d9201ab6df131bc6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa23de340eeb4c41d9201ab6df131bc6b">&#9670;&#160;</a></span>pingMotors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pingMotors </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Motor healthcheck. </p>
+<p >Pings all DXL motors. If any of them don't respond halt entire system indefinitely. </p><dl class="section return"><dt>Returns</dt><dd>Index of the first motor that failed to respond, or -1 if all motors responded. </dd></dl>
+
+</div>
+</div>
+<a id="a0ceebcabbcebae106d0e6f813385b8ae" name="a0ceebcabbcebae106d0e6f813385b8ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ceebcabbcebae106d0e6f813385b8ae">&#9670;&#160;</a></span>vTaskWatchdog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vTaskWatchdog </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>parameter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Watchdog task that periodically perfoms a healthcheck. </p>
+<p >This task pings all the motors and halts the system if any of them doesn't respond. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pvParameters</td><td>Pointer to task parameters (not used). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a6d2462128c73d0cc056869423fdd4e51" name="a6d2462128c73d0cc056869423fdd4e51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d2462128c73d0cc056869423fdd4e51">&#9670;&#160;</a></span>MAX_CURRENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int MAX_CURRENT =300</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

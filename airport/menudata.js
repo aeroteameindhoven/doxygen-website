@@ -70,6 +70,7 @@ var menudata={children:[
 {text:"c",url:"globals_vars.html#index_c"},
 {text:"d",url:"globals_vars.html#index_d"},
 {text:"l",url:"globals_vars.html#index_l"},
+{text:"m",url:"globals_vars.html#index_m"},
 {text:"s",url:"globals_vars.html#index_s"},
 {text:"u",url:"globals_vars.html#index_u"},
 {text:"w",url:"globals_vars.html#index_w"}]},
