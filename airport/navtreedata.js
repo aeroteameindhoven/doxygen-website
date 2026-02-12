@@ -50,7 +50,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"BS__DETACHABLE__full__manual__control_8h.html"
+"BS__airport_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
