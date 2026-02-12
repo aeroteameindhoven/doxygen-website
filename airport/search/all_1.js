@@ -1,9 +1,16 @@
 var searchData=
 [
-  ['calibrate_0',['calibrate',['../BS__DETACHABLE__full__manual__control_8h.html#ad4a7316a51b17d0f691bb3e33b95a5ad',1,'calibrate():&#160;BS_DETACHABLE_full_manual_control.ino'],['../BS__DETACHABLE__full__manual__control_8ino.html#ad4a7316a51b17d0f691bb3e33b95a5ad',1,'calibrate():&#160;BS_DETACHABLE_full_manual_control.ino']]],
-  ['calibration_5fbutton_5f1_1',['CALIBRATION_BUTTON_1',['../bs__common_8cpp.html#a9ba2880725f5658a8d3d8f474be64269',1,'CALIBRATION_BUTTON_1():&#160;bs_common.cpp'],['../bs__common_8h.html#a9ba2880725f5658a8d3d8f474be64269',1,'CALIBRATION_BUTTON_1():&#160;bs_common.cpp']]],
-  ['calibration_5fbutton_5f2_2',['CALIBRATION_BUTTON_2',['../bs__common_8cpp.html#a4e1edec8abe90110c676ea612cf64799',1,'CALIBRATION_BUTTON_2():&#160;bs_common.cpp'],['../bs__common_8h.html#a4e1edec8abe90110c676ea612cf64799',1,'CALIBRATION_BUTTON_2():&#160;bs_common.cpp']]],
-  ['checkmotorscurrent_3',['checkMotorsCurrent',['../watchdog_8cpp.html#a3a8b7d8a67fd82d4117aa58ca8b20fd2',1,'checkMotorsCurrent(float &amp;current):&#160;watchdog.cpp'],['../watchdog_8h.html#a3a8b7d8a67fd82d4117aa58ca8b20fd2',1,'checkMotorsCurrent(float &amp;current):&#160;watchdog.cpp']]],
-  ['control_5fmode_4',['control_mode',['../structBS__STATE.html#a8c5924052c6d45a562f549d0405768b7',1,'BS_STATE']]],
-  ['controlmode_5',['ControlMode',['../bs__common_8h.html#aee3ea37f4f505980157cf93a84687bcb',1,'bs_common.h']]]
+  ['bottom_0',['BOTTOM',['../structBS__STATE.html#a5e1836db91c42d02642b298a89b060a4',1,'BS_STATE']]],
+  ['bs_5fbuild_5fcontrol_5fmode_1',['BS_BUILD_CONTROL_MODE',['../bs__common_8h.html#a59dea9eb01577dfee240fb134cb3f965',1,'bs_common.h']]],
+  ['bs_5fcommon_2ecpp_2',['bs_common.cpp',['../bs__common_8cpp.html',1,'']]],
+  ['bs_5fcommon_2eh_3',['bs_common.h',['../bs__common_8h.html',1,'']]],
+  ['bs_5fdetachable_5ffull_5fmanual_5fcontrol_2eh_4',['BS_DETACHABLE_full_manual_control.h',['../BS__DETACHABLE__full__manual__control_8h.html',1,'']]],
+  ['bs_5fdetachable_5ffull_5fmanual_5fcontrol_2eino_5',['BS_DETACHABLE_full_manual_control.ino',['../BS__DETACHABLE__full__manual__control_8ino.html',1,'']]],
+  ['bs_5fmode_5fauto_6',['BS_MODE_AUTO',['../bs__common_8h.html#aee3ea37f4f505980157cf93a84687bcba6f2515722713681abc0b39c503daaf48',1,'bs_common.h']]],
+  ['bs_5fmode_5fmanual_7',['BS_MODE_MANUAL',['../bs__common_8h.html#aee3ea37f4f505980157cf93a84687bcba335d218edfc67e15727c438910f588db',1,'bs_common.h']]],
+  ['bs_5fmode_5ftest_8',['BS_MODE_TEST',['../bs__common_8h.html#aee3ea37f4f505980157cf93a84687bcbaf652763d38f9eab20b52536112cf131a',1,'bs_common.h']]],
+  ['bs_5fstate_9',['BS_STATE',['../structBS__STATE.html',1,'']]],
+  ['bs_5fstate_10',['bs_state',['../bs__common_8cpp.html#ab5609312376625e217d5de17f16a7726',1,'bs_state():&#160;bs_common.cpp'],['../bs__common_8h.html#ab5609312376625e217d5de17f16a7726',1,'bs_state():&#160;bs_common.cpp']]],
+  ['buttonpin_11',['buttonPin',['../bs__common_8cpp.html#a4ddb8b6ae564eb22f7c74f2683a63b8e',1,'buttonPin():&#160;bs_common.cpp'],['../bs__common_8h.html#a4ddb8b6ae564eb22f7c74f2683a63b8e',1,'buttonPin():&#160;bs_common.cpp']]],
+  ['buttonstate_12',['buttonState',['../bs__common_8cpp.html#a5002611f83f5a861df12917dd5651db8',1,'buttonState():&#160;bs_common.cpp'],['../bs__common_8h.html#a5002611f83f5a861df12917dd5651db8',1,'buttonState():&#160;bs_common.cpp']]]
 ];

@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['waitforlifts_0',['waitForLifts',['../utils_8cpp.html#a11fec93c31ea31787dcf511865d1dafd',1,'waitForLifts(float destination1, float destination2):&#160;utils.cpp'],['../utils_8h.html#a11fec93c31ea31787dcf511865d1dafd',1,'waitForLifts(float destination1, float destination2):&#160;utils.cpp']]],
-  ['warn_1',['WARN',['../bs__common_8h.html#aa5a9053636a30269210c54e734e0d583a74dac7ac23d5b810db6d4067f14e8676',1,'bs_common.h']]],
-  ['watchdog_2ecpp_2',['watchdog.cpp',['../watchdog_8cpp.html',1,'']]],
-  ['watchdog_2eh_3',['watchdog.h',['../watchdog_8h.html',1,'']]],
-  ['watchdogtaskhandle_4',['watchdogTaskHandle',['../bs__common_8cpp.html#a5b1c676f258a2c5c4276d4a300a0df69',1,'watchdogTaskHandle():&#160;bs_common.cpp'],['../bs__common_8h.html#a5b1c676f258a2c5c4276d4a300a0df69',1,'watchdogTaskHandle():&#160;bs_common.cpp']]],
-  ['writecontroltableitemsafe_5',['writeControlTableItemSafe',['../utils_8cpp.html#a9a421a42821790875338e34dcd7542e3',1,'writeControlTableItemSafe(uint8_t item, uint8_t motor_id, int32_t value):&#160;utils.cpp'],['../utils_8h.html#a9a421a42821790875338e34dcd7542e3',1,'writeControlTableItemSafe(uint8_t item, uint8_t motor_id, int32_t value):&#160;utils.cpp']]]
+  ['vtasklogging_0',['vTaskLogging',['../BS__DETACHABLE__full__manual__control_8h.html#a09c10cdae70f7fdb7c2f3f0929a1253b',1,'vTaskLogging(void *pvParameters):&#160;BS_DETACHABLE_full_manual_control.ino'],['../BS__DETACHABLE__full__manual__control_8ino.html#a09c10cdae70f7fdb7c2f3f0929a1253b',1,'vTaskLogging(void *pvParameters):&#160;BS_DETACHABLE_full_manual_control.ino']]],
+  ['vtaskloop_1',['vTaskLoop',['../BS__DETACHABLE__full__manual__control_8h.html#a98ab11345ca0d4d32c4c098a6baf5911',1,'vTaskLoop(void *pvParameters):&#160;BS_DETACHABLE_full_manual_control.ino'],['../BS__DETACHABLE__full__manual__control_8ino.html#a98ab11345ca0d4d32c4c098a6baf5911',1,'vTaskLoop(void *pvParameters):&#160;BS_DETACHABLE_full_manual_control.ino']]],
+  ['vtasksetup_2',['vTaskSetup',['../BS__DETACHABLE__full__manual__control_8h.html#a075cb87ee805f60f90814ccea09ad6b9',1,'vTaskSetup(void *pvParameters):&#160;BS_DETACHABLE_full_manual_control.ino'],['../BS__DETACHABLE__full__manual__control_8ino.html#a075cb87ee805f60f90814ccea09ad6b9',1,'vTaskSetup(void *pvParameters):&#160;BS_DETACHABLE_full_manual_control.ino']]],
+  ['vtaskwatchdog_3',['vTaskWatchdog',['../watchdog_8cpp.html#a0ceebcabbcebae106d0e6f813385b8ae',1,'vTaskWatchdog(void *parameter):&#160;watchdog.cpp'],['../watchdog_8h.html#a0ceebcabbcebae106d0e6f813385b8ae',1,'vTaskWatchdog(void *parameter):&#160;watchdog.cpp']]]
 ];
