@@ -25,7 +25,7 @@
 var NAVTREE =
 [
   [ "BS Airport", "index.html", [
-    [ "Airport RTOS", "index.html", null ],
+    [ "Airport Battery Swap", "index.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
