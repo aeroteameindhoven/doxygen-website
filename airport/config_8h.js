@@ -1,5 +1,6 @@
 var config_8h =
 [
+    [ "CONTROL_SERIAL", "config_8h.html#ad243df7e07bfe6cd4a11e448bc694bc3", null ],
     [ "DEBUG_SERIAL", "config_8h.html#a61e127df60d55ea4c8bd6b8ec1f88367", null ],
     [ "DXL_SERIAL", "config_8h.html#af5240a49e70ff6e269be7c077059cfe0", null ],
     [ "LOCATION", "config_8h.html#ac27b81440ce6781d5bfcab7a9bbdef99", null ],

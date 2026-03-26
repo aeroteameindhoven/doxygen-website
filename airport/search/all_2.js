@@ -7,5 +7,6 @@ var searchData=
   ['config_4',['Config',['../namespaceConfig.html',1,'']]],
   ['config_2eh_5',['config.h',['../config_8h.html',1,'']]],
   ['control_5fmode_6',['control_mode',['../structBS__STATE.html#a8c5924052c6d45a562f549d0405768b7',1,'BS_STATE']]],
-  ['controlmode_7',['ControlMode',['../bs__common_8h.html#aee3ea37f4f505980157cf93a84687bcb',1,'bs_common.h']]]
+  ['control_5fserial_7',['CONTROL_SERIAL',['../config_8h.html#ad243df7e07bfe6cd4a11e448bc694bc3',1,'config.h']]],
+  ['controlmode_8',['ControlMode',['../bs__common_8h.html#aee3ea37f4f505980157cf93a84687bcb',1,'bs_common.h']]]
 ];
