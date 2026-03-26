@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['side_0',['SIDE',['../bs__common_8h.html#aed1a25f4b15c6110f7ac1dc385827049',1,'bs_common.h']]]
+  ['motoroperation_0',['MotorOperation',['../bs__common_8h.html#a6d7806a63332bf8ba6873462af4a04f4',1,'bs_common.h']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['turntorqueoffsafe_0',['turnTorqueOffSafe',['../utils_8cpp.html#a9f2c51a840bbd0d387594efd39859499',1,'turnTorqueOffSafe(uint8_t motor_id):&#160;utils.cpp'],['../utils_8h.html#a9f2c51a840bbd0d387594efd39859499',1,'turnTorqueOffSafe(uint8_t motor_id):&#160;utils.cpp']]],
-  ['turntorqueonsafe_1',['turnTorqueOnSafe',['../utils_8cpp.html#aa73130a283f85d4e6d979a28e71320de',1,'turnTorqueOnSafe(uint8_t motor_id):&#160;utils.cpp'],['../utils_8h.html#aa73130a283f85d4e6d979a28e71320de',1,'turnTorqueOnSafe(uint8_t motor_id):&#160;utils.cpp']]]
+  ['taskmotor_0',['TaskMotor',['../BS__airport_8h.html#a2ddbc3fa1feb6d17d404b16858230b73',1,'TaskMotor(void *pvParameters):&#160;BS_airport.ino'],['../BS__airport_8ino.html#a2ddbc3fa1feb6d17d404b16858230b73',1,'TaskMotor(void *pvParameters):&#160;BS_airport.ino']]]
 ];

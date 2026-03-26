@@ -11,6 +11,6 @@ var searchData=
   ['bs_5fmode_5ftest_8',['BS_MODE_TEST',['../bs__common_8h.html#aee3ea37f4f505980157cf93a84687bcbaf652763d38f9eab20b52536112cf131a',1,'bs_common.h']]],
   ['bs_5fstate_9',['BS_STATE',['../structBS__STATE.html',1,'']]],
   ['bs_5fstate_10',['bs_state',['../bs__common_8cpp.html#ab5609312376625e217d5de17f16a7726',1,'bs_state():&#160;bs_common.cpp'],['../bs__common_8h.html#ab5609312376625e217d5de17f16a7726',1,'bs_state():&#160;bs_common.cpp']]],
-  ['buttonpin_11',['buttonPin',['../bs__common_8cpp.html#a4ddb8b6ae564eb22f7c74f2683a63b8e',1,'buttonPin():&#160;bs_common.cpp'],['../bs__common_8h.html#a4ddb8b6ae564eb22f7c74f2683a63b8e',1,'buttonPin():&#160;bs_common.cpp']]],
+  ['buttonpin_11',['buttonPin',['../namespaceConfig.html#ab37ff2913efb145545682c2696cf4833',1,'Config']]],
   ['buttonstate_12',['buttonState',['../bs__common_8cpp.html#a5002611f83f5a861df12917dd5651db8',1,'buttonState():&#160;bs_common.cpp'],['../bs__common_8h.html#a5002611f83f5a861df12917dd5651db8',1,'buttonState():&#160;bs_common.cpp']]]
 ];

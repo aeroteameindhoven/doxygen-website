@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['max_5fcurrent_0',['MAX_CURRENT',['../watchdog_8cpp.html#a6d2462128c73d0cc056869423fdd4e51',1,'watchdog.cpp']]],
-  ['max_5fcurrent_5frotation_1',['MAX_CURRENT_ROTATION',['../watchdog_8cpp.html#a51aa92810ba735a5cf2345a064386fc5',1,'watchdog.cpp']]]
+  ['item_5faddress_0',['item_address',['../structMotorCommand.html#a04873238151e97e1ef0b42053238c72f',1,'MotorCommand']]]
 ];

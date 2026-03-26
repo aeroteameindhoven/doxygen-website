@@ -24,6 +24,11 @@
 */
 var menudata={children:[
 {text:"Main Page",url:"index.html"},
+{text:"Namespaces",url:"namespaces.html",children:[
+{text:"Namespace List",url:"namespaces.html"},
+{text:"Namespace Members",url:"namespacemembers.html",children:[
+{text:"All",url:"namespacemembers.html"},
+{text:"Variables",url:"namespacemembers_vars.html"}]}]},
 {text:"Classes",url:"annotated.html",children:[
 {text:"Class List",url:"annotated.html"},
 {text:"Class Index",url:"classes.html"},
@@ -65,15 +70,7 @@ var menudata={children:[
 {text:"u",url:"globals_func.html#index_u"},
 {text:"v",url:"globals_func.html#index_v"},
 {text:"w",url:"globals_func.html#index_w"}]},
-{text:"Variables",url:"globals_vars.html",children:[
-{text:"b",url:"globals_vars.html#index_b"},
-{text:"c",url:"globals_vars.html#index_c"},
-{text:"d",url:"globals_vars.html#index_d"},
-{text:"l",url:"globals_vars.html#index_l"},
-{text:"m",url:"globals_vars.html#index_m"},
-{text:"s",url:"globals_vars.html#index_s"},
-{text:"u",url:"globals_vars.html#index_u"},
-{text:"w",url:"globals_vars.html#index_w"}]},
+{text:"Variables",url:"globals_vars.html"},
 {text:"Enumerations",url:"globals_enum.html"},
 {text:"Enumerator",url:"globals_eval.html"},
 {text:"Macros",url:"globals_defs.html"}]}]}]}

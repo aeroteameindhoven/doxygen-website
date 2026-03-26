@@ -98,13 +98,11 @@ $(document).ready(function(){initNavTree('bs__common_8h.html',''); initResizable
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
-<code>#include &lt;Dynamixel2Arduino.h&gt;</code><br />
 <code>#include &lt;Arduino_FreeRTOS.h&gt;</code><br />
+<code>#include &lt;Dynamixel2Arduino.h&gt;</code><br />
 <code>#include &lt;Servo.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="input_8h_source.html">input.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="logging_8h_source.html">logging.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="utils_8h_source.html">utils.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="watchdog_8h_source.html">watchdog.h</a>&quot;</code><br />
+<code>#include &lt;queue.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="config_8h_source.html">config.h</a>&quot;</code><br />
 </div>
 <p><a href="bs__common_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -112,15 +110,13 @@ $(document).ready(function(){initNavTree('bs__common_8h.html',''); initResizable
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBS__STATE.html">BS_STATE</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMotorReadResult.html">MotorReadResult</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMotorCommand.html">MotorCommand</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:af5240a49e70ff6e269be7c077059cfe0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#af5240a49e70ff6e269be7c077059cfe0">DXL_SERIAL</a>&#160;&#160;&#160;Serial1</td></tr>
-<tr class="separator:af5240a49e70ff6e269be7c077059cfe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61e127df60d55ea4c8bd6b8ec1f88367"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a61e127df60d55ea4c8bd6b8ec1f88367">DEBUG_SERIAL</a>&#160;&#160;&#160;Serial3</td></tr>
-<tr class="separator:a61e127df60d55ea4c8bd6b8ec1f88367"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac27b81440ce6781d5bfcab7a9bbdef99"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#ac27b81440ce6781d5bfcab7a9bbdef99">LOCATION</a>&#160;&#160;&#160;&quot;airport&quot;</td></tr>
-<tr class="separator:ac27b81440ce6781d5bfcab7a9bbdef99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59dea9eb01577dfee240fb134cb3f965"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a59dea9eb01577dfee240fb134cb3f965">BS_BUILD_CONTROL_MODE</a>&#160;&#160;&#160;<a class="el" href="bs__common_8h.html#aee3ea37f4f505980157cf93a84687bcba6f2515722713681abc0b39c503daaf48">BS_MODE_AUTO</a></td></tr>
 <tr class="separator:a59dea9eb01577dfee240fb134cb3f965"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -142,55 +138,38 @@ Enumerations</h2></td></tr>
 , <a class="el" href="bs__common_8h.html#aa5a9053636a30269210c54e734e0d583a2fd6f336d08340583bd620a7f5694c90">ERROR</a> = 3
  }</td></tr>
 <tr class="separator:aa5a9053636a30269210c54e734e0d583"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d7806a63332bf8ba6873462af4a04f4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a6d7806a63332bf8ba6873462af4a04f4">MotorOperation</a> { <br />
+&#160;&#160;<a class="el" href="bs__common_8h.html#a6d7806a63332bf8ba6873462af4a04f4ae262b3b8122eafafa18a65f91b67cedf">MOTOR_OPERATION_MOVE_ONE_BY</a>
+, <a class="el" href="bs__common_8h.html#a6d7806a63332bf8ba6873462af4a04f4a0a8990036d01328a64a0dc3c7290945e">MOTOR_OPERATION_MOVE_TWO_BY</a>
+, <a class="el" href="bs__common_8h.html#a6d7806a63332bf8ba6873462af4a04f4a83ab5a867cac074deda9aecd6d99c56e">MOTOR_OPERATION_MOVE_ONE_TO</a>
+, <a class="el" href="bs__common_8h.html#a6d7806a63332bf8ba6873462af4a04f4ae91db03b2b0e694ed8fc2fa014e8bcd5">MOTOR_OPERATION_MOVE_TWO_TO</a>
+, <br />
+&#160;&#160;<a class="el" href="bs__common_8h.html#a6d7806a63332bf8ba6873462af4a04f4a2d5689e62be1210d63c884a2695cef74">MOTOR_OPERATION_GET_POSITION</a>
+, <a class="el" href="bs__common_8h.html#a6d7806a63332bf8ba6873462af4a04f4adf549e5add8e68ceb6f2c5b23575d998">MOTOR_OPERATION_GET_CURRENT</a>
+, <a class="el" href="bs__common_8h.html#a6d7806a63332bf8ba6873462af4a04f4aa2540f1e17acf9734facc031cb8a3ed7">MOTOR_OPERATION_GET_LOAD</a>
+, <a class="el" href="bs__common_8h.html#a6d7806a63332bf8ba6873462af4a04f4aa67f070e6b32c8e62a5914ec5daaae23">MOTOR_OPERATION_PING</a>
+, <br />
+&#160;&#160;<a class="el" href="bs__common_8h.html#a6d7806a63332bf8ba6873462af4a04f4a0f40876ee8c48966df600a416d4bad27">MOTOR_OPERATION_GET_TEMPERATURE</a>
+, <a class="el" href="bs__common_8h.html#a6d7806a63332bf8ba6873462af4a04f4a66ac2fc6abf38a180ccc813286eec92a">MOTOR_OPERATION_TORQUE_ON</a>
+, <a class="el" href="bs__common_8h.html#a6d7806a63332bf8ba6873462af4a04f4a3d691740ae0e9ce3e2c195778be4d7e4">MOTOR_OPERATION_TORQUE_OFF</a>
+, <a class="el" href="bs__common_8h.html#a6d7806a63332bf8ba6873462af4a04f4a707febef3a81e01430874e6577e19cb6">MOTOR_OPERATION_WRITE_ITEM</a>
+, <br />
+&#160;&#160;<a class="el" href="bs__common_8h.html#a6d7806a63332bf8ba6873462af4a04f4a84677679b34ff8213dd9fa532c0ece84">MOTOR_OPERATION_SET_OPERATING_MODE</a>
+, <a class="el" href="bs__common_8h.html#a6d7806a63332bf8ba6873462af4a04f4acf56ec7125c6569d0ea8c3235358260e">MOTOR_HOLD_POSITION</a>
+<br />
+ }</td></tr>
+<tr class="separator:a6d7806a63332bf8ba6873462af4a04f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:af7064e6570bfa651bd8af3cd058d563e"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#af7064e6570bfa651bd8af3cd058d563e">DXL_DIR_PIN</a> = 11</td></tr>
-<tr class="separator:af7064e6570bfa651bd8af3cd058d563e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9049b7c609a1bee23d6dc2b21ef471b2"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a9049b7c609a1bee23d6dc2b21ef471b2">DXL_ROTATION</a></td></tr>
-<tr class="separator:a9049b7c609a1bee23d6dc2b21ef471b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e75195279aa799a2cf2400583e9099d"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a8e75195279aa799a2cf2400583e9099d">DXL_LATCH2</a></td></tr>
-<tr class="separator:a8e75195279aa799a2cf2400583e9099d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeaebd20dd334dd529879179216c99025"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#aeaebd20dd334dd529879179216c99025">DXL_LATCH3</a></td></tr>
-<tr class="separator:aeaebd20dd334dd529879179216c99025"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa40051fad16b64c49ecb21f0a409616d"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#aa40051fad16b64c49ecb21f0a409616d">DXL_LATCH4</a></td></tr>
-<tr class="separator:aa40051fad16b64c49ecb21f0a409616d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84b9095a67efe1727018b910de4803f4"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a84b9095a67efe1727018b910de4803f4">DXL_LATCH5</a></td></tr>
-<tr class="separator:a84b9095a67efe1727018b910de4803f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fc1fd322124daab1e70c52dadc17524"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a7fc1fd322124daab1e70c52dadc17524">DXL_LIFT1</a></td></tr>
-<tr class="separator:a7fc1fd322124daab1e70c52dadc17524"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a802c319ba2092bbb33de9a991fc05df1"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a802c319ba2092bbb33de9a991fc05df1">DXL_LIFT2</a></td></tr>
-<tr class="separator:a802c319ba2092bbb33de9a991fc05df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4aff7ce415241205664777bb7345fa0"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#ac4aff7ce415241205664777bb7345fa0">SIDE1_POS</a></td></tr>
-<tr class="separator:ac4aff7ce415241205664777bb7345fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b6ec90263da047475e9b0fe9f641f69"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a3b6ec90263da047475e9b0fe9f641f69">SIDE2_POS</a></td></tr>
-<tr class="separator:a3b6ec90263da047475e9b0fe9f641f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a722a6226b2293816fa474cb03c27663b"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a722a6226b2293816fa474cb03c27663b">DIST_BOTTOM</a></td></tr>
-<tr class="separator:a722a6226b2293816fa474cb03c27663b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade9319b44fda545be2678048433204fd"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#ade9319b44fda545be2678048433204fd">LATCHES_UNLOCKED</a></td></tr>
-<tr class="separator:ade9319b44fda545be2678048433204fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ad29518d2b34e077ce6b22142bd0148"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a4ad29518d2b34e077ce6b22142bd0148">LATCHES_LOCKED</a></td></tr>
-<tr class="separator:a4ad29518d2b34e077ce6b22142bd0148"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ccbd1317e61a66fd6cac9f07dc87d34"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a8ccbd1317e61a66fd6cac9f07dc87d34">UP_POSITION_1</a></td></tr>
-<tr class="separator:a8ccbd1317e61a66fd6cac9f07dc87d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afda108569f99fed05e0ab6b0cdf0d4dc"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#afda108569f99fed05e0ab6b0cdf0d4dc">UP_POSITION_2</a></td></tr>
-<tr class="separator:afda108569f99fed05e0ab6b0cdf0d4dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52c89495a741f173672769a629dbdcc4"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a52c89495a741f173672769a629dbdcc4">DOWN_POSITION_1</a></td></tr>
-<tr class="separator:a52c89495a741f173672769a629dbdcc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae5b64db98ecf912fb7855e332ec8cb3"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#aae5b64db98ecf912fb7855e332ec8cb3">DOWN_POSITION_2</a></td></tr>
-<tr class="separator:aae5b64db98ecf912fb7855e332ec8cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ba2880725f5658a8d3d8f474be64269"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a9ba2880725f5658a8d3d8f474be64269">CALIBRATION_BUTTON_1</a></td></tr>
-<tr class="separator:a9ba2880725f5658a8d3d8f474be64269"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e1edec8abe90110c676ea612cf64799"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a4e1edec8abe90110c676ea612cf64799">CALIBRATION_BUTTON_2</a></td></tr>
-<tr class="separator:a4e1edec8abe90110c676ea612cf64799"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ddb8b6ae564eb22f7c74f2683a63b8e"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a4ddb8b6ae564eb22f7c74f2683a63b8e">buttonPin</a></td></tr>
-<tr class="separator:a4ddb8b6ae564eb22f7c74f2683a63b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5002611f83f5a861df12917dd5651db8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a5002611f83f5a861df12917dd5651db8">buttonState</a></td></tr>
 <tr class="separator:a5002611f83f5a861df12917dd5651db8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a043685a8ad6db1668f68928bd4790127"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a043685a8ad6db1668f68928bd4790127">DXL_PROTOCOL_VERSION</a></td></tr>
-<tr class="separator:a043685a8ad6db1668f68928bd4790127"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a614a40466f1640cd0475879636a55e53"><td class="memItemLeft" align="right" valign="top">Dynamixel2Arduino&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a614a40466f1640cd0475879636a55e53">dxl</a></td></tr>
 <tr class="separator:a614a40466f1640cd0475879636a55e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5609312376625e217d5de17f16a7726"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structBS__STATE.html">BS_STATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#ab5609312376625e217d5de17f16a7726">bs_state</a></td></tr>
+<tr class="separator:ab5609312376625e217d5de17f16a7726"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fd8a873af60a954cd4c1d414bf9e43e"><td class="memItemLeft" align="right" valign="top">QueueHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a1fd8a873af60a954cd4c1d414bf9e43e">motor_command_queue</a></td></tr>
+<tr class="separator:a1fd8a873af60a954cd4c1d414bf9e43e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a601dc47a176b463e85be7f9640c6cb2a"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a601dc47a176b463e85be7f9640c6cb2a">loopTaskHandle</a></td></tr>
 <tr class="separator:a601dc47a176b463e85be7f9640c6cb2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09d857b02656126ab90735df3b2016bb"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a09d857b02656126ab90735df3b2016bb">loggingTaskHandle</a></td></tr>
@@ -199,8 +178,8 @@ Variables</h2></td></tr>
 <tr class="separator:abbd733bf19f7a9ee00ca87dd455c2b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b1c676f258a2c5c4276d4a300a0df69"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a5b1c676f258a2c5c4276d4a300a0df69">watchdogTaskHandle</a></td></tr>
 <tr class="separator:a5b1c676f258a2c5c4276d4a300a0df69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5609312376625e217d5de17f16a7726"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structBS__STATE.html">BS_STATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#ab5609312376625e217d5de17f16a7726">bs_state</a></td></tr>
-<tr class="separator:ab5609312376625e217d5de17f16a7726"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97fdacb13304251dc759c691e31f6767"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bs__common_8h.html#a97fdacb13304251dc759c691e31f6767">motorTaskHandle</a></td></tr>
+<tr class="separator:a97fdacb13304251dc759c691e31f6767"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a59dea9eb01577dfee240fb134cb3f965" name="a59dea9eb01577dfee240fb134cb3f965"></a>
@@ -211,48 +190,6 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define BS_BUILD_CONTROL_MODE&#160;&#160;&#160;<a class="el" href="bs__common_8h.html#aee3ea37f4f505980157cf93a84687bcba6f2515722713681abc0b39c503daaf48">BS_MODE_AUTO</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a61e127df60d55ea4c8bd6b8ec1f88367" name="a61e127df60d55ea4c8bd6b8ec1f88367"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61e127df60d55ea4c8bd6b8ec1f88367">&#9670;&#160;</a></span>DEBUG_SERIAL</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEBUG_SERIAL&#160;&#160;&#160;Serial3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af5240a49e70ff6e269be7c077059cfe0" name="af5240a49e70ff6e269be7c077059cfe0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5240a49e70ff6e269be7c077059cfe0">&#9670;&#160;</a></span>DXL_SERIAL</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DXL_SERIAL&#160;&#160;&#160;Serial1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac27b81440ce6781d5bfcab7a9bbdef99" name="ac27b81440ce6781d5bfcab7a9bbdef99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac27b81440ce6781d5bfcab7a9bbdef99">&#9670;&#160;</a></span>LOCATION</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LOCATION&#160;&#160;&#160;&quot;airport&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -271,7 +208,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Control modes for battery swap system </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aee3ea37f4f505980157cf93a84687bcba335d218edfc67e15727c438910f588db" name="aee3ea37f4f505980157cf93a84687bcba335d218edfc67e15727c438910f588db"></a>BS_MODE_MANUAL&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aee3ea37f4f505980157cf93a84687bcba6f2515722713681abc0b39c503daaf48" name="aee3ea37f4f505980157cf93a84687bcba6f2515722713681abc0b39c503daaf48"></a>BS_MODE_AUTO&#160;</td><td class="fielddoc"></td></tr>
@@ -300,6 +236,36 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a6d7806a63332bf8ba6873462af4a04f4" name="a6d7806a63332bf8ba6873462af4a04f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d7806a63332bf8ba6873462af4a04f4">&#9670;&#160;</a></span>MotorOperation</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="bs__common_8h.html#a6d7806a63332bf8ba6873462af4a04f4">MotorOperation</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a6d7806a63332bf8ba6873462af4a04f4ae262b3b8122eafafa18a65f91b67cedf" name="a6d7806a63332bf8ba6873462af4a04f4ae262b3b8122eafafa18a65f91b67cedf"></a>MOTOR_OPERATION_MOVE_ONE_BY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6d7806a63332bf8ba6873462af4a04f4a0a8990036d01328a64a0dc3c7290945e" name="a6d7806a63332bf8ba6873462af4a04f4a0a8990036d01328a64a0dc3c7290945e"></a>MOTOR_OPERATION_MOVE_TWO_BY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6d7806a63332bf8ba6873462af4a04f4a83ab5a867cac074deda9aecd6d99c56e" name="a6d7806a63332bf8ba6873462af4a04f4a83ab5a867cac074deda9aecd6d99c56e"></a>MOTOR_OPERATION_MOVE_ONE_TO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6d7806a63332bf8ba6873462af4a04f4ae91db03b2b0e694ed8fc2fa014e8bcd5" name="a6d7806a63332bf8ba6873462af4a04f4ae91db03b2b0e694ed8fc2fa014e8bcd5"></a>MOTOR_OPERATION_MOVE_TWO_TO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6d7806a63332bf8ba6873462af4a04f4a2d5689e62be1210d63c884a2695cef74" name="a6d7806a63332bf8ba6873462af4a04f4a2d5689e62be1210d63c884a2695cef74"></a>MOTOR_OPERATION_GET_POSITION&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6d7806a63332bf8ba6873462af4a04f4adf549e5add8e68ceb6f2c5b23575d998" name="a6d7806a63332bf8ba6873462af4a04f4adf549e5add8e68ceb6f2c5b23575d998"></a>MOTOR_OPERATION_GET_CURRENT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6d7806a63332bf8ba6873462af4a04f4aa2540f1e17acf9734facc031cb8a3ed7" name="a6d7806a63332bf8ba6873462af4a04f4aa2540f1e17acf9734facc031cb8a3ed7"></a>MOTOR_OPERATION_GET_LOAD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6d7806a63332bf8ba6873462af4a04f4aa67f070e6b32c8e62a5914ec5daaae23" name="a6d7806a63332bf8ba6873462af4a04f4aa67f070e6b32c8e62a5914ec5daaae23"></a>MOTOR_OPERATION_PING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6d7806a63332bf8ba6873462af4a04f4a0f40876ee8c48966df600a416d4bad27" name="a6d7806a63332bf8ba6873462af4a04f4a0f40876ee8c48966df600a416d4bad27"></a>MOTOR_OPERATION_GET_TEMPERATURE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6d7806a63332bf8ba6873462af4a04f4a66ac2fc6abf38a180ccc813286eec92a" name="a6d7806a63332bf8ba6873462af4a04f4a66ac2fc6abf38a180ccc813286eec92a"></a>MOTOR_OPERATION_TORQUE_ON&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6d7806a63332bf8ba6873462af4a04f4a3d691740ae0e9ce3e2c195778be4d7e4" name="a6d7806a63332bf8ba6873462af4a04f4a3d691740ae0e9ce3e2c195778be4d7e4"></a>MOTOR_OPERATION_TORQUE_OFF&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6d7806a63332bf8ba6873462af4a04f4a707febef3a81e01430874e6577e19cb6" name="a6d7806a63332bf8ba6873462af4a04f4a707febef3a81e01430874e6577e19cb6"></a>MOTOR_OPERATION_WRITE_ITEM&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6d7806a63332bf8ba6873462af4a04f4a84677679b34ff8213dd9fa532c0ece84" name="a6d7806a63332bf8ba6873462af4a04f4a84677679b34ff8213dd9fa532c0ece84"></a>MOTOR_OPERATION_SET_OPERATING_MODE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6d7806a63332bf8ba6873462af4a04f4acf56ec7125c6569d0ea8c3235358260e" name="a6d7806a63332bf8ba6873462af4a04f4acf56ec7125c6569d0ea8c3235358260e"></a>MOTOR_HOLD_POSITION&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 <a id="aed1a25f4b15c6110f7ac1dc385827049" name="aed1a25f4b15c6110f7ac1dc385827049"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aed1a25f4b15c6110f7ac1dc385827049">&#9670;&#160;</a></span>SIDE</h2>
 
@@ -311,7 +277,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Sides of the battery swap system </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aed1a25f4b15c6110f7ac1dc385827049a4579d9b304a7add69065a6db77642f01" name="aed1a25f4b15c6110f7ac1dc385827049a4579d9b304a7add69065a6db77642f01"></a>IN_BETWEEN&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aed1a25f4b15c6110f7ac1dc385827049acda13e518099e7bc9484a28b0adee91c" name="aed1a25f4b15c6110f7ac1dc385827049acda13e518099e7bc9484a28b0adee91c"></a>SIDE1&#160;</td><td class="fielddoc"></td></tr>
@@ -332,28 +297,6 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structBS__STATE.html">BS_STATE</a> bs_state</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4ddb8b6ae564eb22f7c74f2683a63b8e" name="a4ddb8b6ae564eb22f7c74f2683a63b8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ddb8b6ae564eb22f7c74f2683a63b8e">&#9670;&#160;</a></span>buttonPin</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int buttonPin</td>
         </tr>
       </table>
   </td>
@@ -387,116 +330,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a9ba2880725f5658a8d3d8f474be64269" name="a9ba2880725f5658a8d3d8f474be64269"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ba2880725f5658a8d3d8f474be64269">&#9670;&#160;</a></span>CALIBRATION_BUTTON_1</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int CALIBRATION_BUTTON_1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4e1edec8abe90110c676ea612cf64799" name="a4e1edec8abe90110c676ea612cf64799"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e1edec8abe90110c676ea612cf64799">&#9670;&#160;</a></span>CALIBRATION_BUTTON_2</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int CALIBRATION_BUTTON_2</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a722a6226b2293816fa474cb03c27663b" name="a722a6226b2293816fa474cb03c27663b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a722a6226b2293816fa474cb03c27663b">&#9670;&#160;</a></span>DIST_BOTTOM</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const float DIST_BOTTOM</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a52c89495a741f173672769a629dbdcc4" name="a52c89495a741f173672769a629dbdcc4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52c89495a741f173672769a629dbdcc4">&#9670;&#160;</a></span>DOWN_POSITION_1</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const float DOWN_POSITION_1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aae5b64db98ecf912fb7855e332ec8cb3" name="aae5b64db98ecf912fb7855e332ec8cb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae5b64db98ecf912fb7855e332ec8cb3">&#9670;&#160;</a></span>DOWN_POSITION_2</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const float DOWN_POSITION_2</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a614a40466f1640cd0475879636a55e53" name="a614a40466f1640cd0475879636a55e53"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a614a40466f1640cd0475879636a55e53">&#9670;&#160;</a></span>dxl</h2>
 
@@ -508,240 +341,6 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">Dynamixel2Arduino dxl</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af7064e6570bfa651bd8af3cd058d563e" name="af7064e6570bfa651bd8af3cd058d563e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7064e6570bfa651bd8af3cd058d563e">&#9670;&#160;</a></span>DXL_DIR_PIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int DXL_DIR_PIN = 11</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8e75195279aa799a2cf2400583e9099d" name="a8e75195279aa799a2cf2400583e9099d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e75195279aa799a2cf2400583e9099d">&#9670;&#160;</a></span>DXL_LATCH2</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t DXL_LATCH2</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aeaebd20dd334dd529879179216c99025" name="aeaebd20dd334dd529879179216c99025"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeaebd20dd334dd529879179216c99025">&#9670;&#160;</a></span>DXL_LATCH3</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t DXL_LATCH3</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa40051fad16b64c49ecb21f0a409616d" name="aa40051fad16b64c49ecb21f0a409616d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa40051fad16b64c49ecb21f0a409616d">&#9670;&#160;</a></span>DXL_LATCH4</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t DXL_LATCH4</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a84b9095a67efe1727018b910de4803f4" name="a84b9095a67efe1727018b910de4803f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84b9095a67efe1727018b910de4803f4">&#9670;&#160;</a></span>DXL_LATCH5</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t DXL_LATCH5</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7fc1fd322124daab1e70c52dadc17524" name="a7fc1fd322124daab1e70c52dadc17524"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7fc1fd322124daab1e70c52dadc17524">&#9670;&#160;</a></span>DXL_LIFT1</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t DXL_LIFT1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a802c319ba2092bbb33de9a991fc05df1" name="a802c319ba2092bbb33de9a991fc05df1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a802c319ba2092bbb33de9a991fc05df1">&#9670;&#160;</a></span>DXL_LIFT2</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t DXL_LIFT2</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a043685a8ad6db1668f68928bd4790127" name="a043685a8ad6db1668f68928bd4790127"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a043685a8ad6db1668f68928bd4790127">&#9670;&#160;</a></span>DXL_PROTOCOL_VERSION</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const float DXL_PROTOCOL_VERSION</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9049b7c609a1bee23d6dc2b21ef471b2" name="a9049b7c609a1bee23d6dc2b21ef471b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9049b7c609a1bee23d6dc2b21ef471b2">&#9670;&#160;</a></span>DXL_ROTATION</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t DXL_ROTATION</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4ad29518d2b34e077ce6b22142bd0148" name="a4ad29518d2b34e077ce6b22142bd0148"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ad29518d2b34e077ce6b22142bd0148">&#9670;&#160;</a></span>LATCHES_LOCKED</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const float LATCHES_LOCKED</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ade9319b44fda545be2678048433204fd" name="ade9319b44fda545be2678048433204fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade9319b44fda545be2678048433204fd">&#9670;&#160;</a></span>LATCHES_UNLOCKED</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const float LATCHES_UNLOCKED</td>
         </tr>
       </table>
   </td>
@@ -797,6 +396,50 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a1fd8a873af60a954cd4c1d414bf9e43e" name="a1fd8a873af60a954cd4c1d414bf9e43e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fd8a873af60a954cd4c1d414bf9e43e">&#9670;&#160;</a></span>motor_command_queue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QueueHandle_t motor_command_queue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a97fdacb13304251dc759c691e31f6767" name="a97fdacb13304251dc759c691e31f6767"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97fdacb13304251dc759c691e31f6767">&#9670;&#160;</a></span>motorTaskHandle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t motorTaskHandle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="abbd733bf19f7a9ee00ca87dd455c2b9e" name="abbd733bf19f7a9ee00ca87dd455c2b9e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abbd733bf19f7a9ee00ca87dd455c2b9e">&#9670;&#160;</a></span>setupTaskHandle</h2>
 
@@ -808,94 +451,6 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">TaskHandle_t setupTaskHandle</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac4aff7ce415241205664777bb7345fa0" name="ac4aff7ce415241205664777bb7345fa0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4aff7ce415241205664777bb7345fa0">&#9670;&#160;</a></span>SIDE1_POS</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const float SIDE1_POS</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3b6ec90263da047475e9b0fe9f641f69" name="a3b6ec90263da047475e9b0fe9f641f69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b6ec90263da047475e9b0fe9f641f69">&#9670;&#160;</a></span>SIDE2_POS</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const float SIDE2_POS</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8ccbd1317e61a66fd6cac9f07dc87d34" name="a8ccbd1317e61a66fd6cac9f07dc87d34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ccbd1317e61a66fd6cac9f07dc87d34">&#9670;&#160;</a></span>UP_POSITION_1</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const float UP_POSITION_1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="afda108569f99fed05e0ab6b0cdf0d4dc" name="afda108569f99fed05e0ab6b0cdf0d4dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afda108569f99fed05e0ab6b0cdf0d4dc">&#9670;&#160;</a></span>UP_POSITION_2</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const float UP_POSITION_2</td>
         </tr>
       </table>
   </td>

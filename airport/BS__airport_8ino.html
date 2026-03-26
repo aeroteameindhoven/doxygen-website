@@ -105,47 +105,28 @@ Functions</h2></td></tr>
 <tr class="memdesc:afe461d27b9c48d5921c00d521181f12f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Arduino loop function. Not used, as RTOS tasks are used instead.  <a href="BS__airport_8ino.html#afe461d27b9c48d5921c00d521181f12f">More...</a><br /></td></tr>
 <tr class="separator:afe461d27b9c48d5921c00d521181f12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a075cb87ee805f60f90814ccea09ad6b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BS__airport_8ino.html#a075cb87ee805f60f90814ccea09ad6b9">vTaskSetup</a> (void *pvParameters)</td></tr>
-<tr class="memdesc:a075cb87ee805f60f90814ccea09ad6b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup task that performs initial setup of motors and system.  <a href="BS__airport_8ino.html#a075cb87ee805f60f90814ccea09ad6b9">More...</a><br /></td></tr>
+<tr class="memdesc:a075cb87ee805f60f90814ccea09ad6b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs essential setup for the system, including:  <a href="BS__airport_8ino.html#a075cb87ee805f60f90814ccea09ad6b9">More...</a><br /></td></tr>
 <tr class="separator:a075cb87ee805f60f90814ccea09ad6b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98ab11345ca0d4d32c4c098a6baf5911"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BS__airport_8ino.html#a98ab11345ca0d4d32c4c098a6baf5911">vTaskLoop</a> (void *pvParameters)</td></tr>
 <tr class="memdesc:a98ab11345ca0d4d32c4c098a6baf5911"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main loop task that handles button presses and input reading.  <a href="BS__airport_8ino.html#a98ab11345ca0d4d32c4c098a6baf5911">More...</a><br /></td></tr>
 <tr class="separator:a98ab11345ca0d4d32c4c098a6baf5911"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09c10cdae70f7fdb7c2f3f0929a1253b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BS__airport_8ino.html#a09c10cdae70f7fdb7c2f3f0929a1253b">vTaskLogging</a> (void *pvParameters)</td></tr>
-<tr class="memdesc:a09c10cdae70f7fdb7c2f3f0929a1253b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logging task that periodically reads motor data and logs it.  <a href="BS__airport_8ino.html#a09c10cdae70f7fdb7c2f3f0929a1253b">More...</a><br /></td></tr>
+<tr class="memdesc:a09c10cdae70f7fdb7c2f3f0929a1253b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Periodically reads motor data and logs it. This includes:  <a href="BS__airport_8ino.html#a09c10cdae70f7fdb7c2f3f0929a1253b">More...</a><br /></td></tr>
 <tr class="separator:a09c10cdae70f7fdb7c2f3f0929a1253b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ceebcabbcebae106d0e6f813385b8ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BS__airport_8ino.html#a0ceebcabbcebae106d0e6f813385b8ae">vTaskWatchdog</a> (void *parameter)</td></tr>
+<tr class="memdesc:a0ceebcabbcebae106d0e6f813385b8ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Watchdog task that periodically performs a health-check.  <a href="BS__airport_8ino.html#a0ceebcabbcebae106d0e6f813385b8ae">More...</a><br /></td></tr>
+<tr class="separator:a0ceebcabbcebae106d0e6f813385b8ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ddbc3fa1feb6d17d404b16858230b73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BS__airport_8ino.html#a2ddbc3fa1feb6d17d404b16858230b73">TaskMotor</a> (void *pvParameters)</td></tr>
+<tr class="memdesc:a2ddbc3fa1feb6d17d404b16858230b73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acts as the only interface for communicating with the DYNAMIXEL motors. It listens for motor commands on a queue and executes them sequentially. The task runs indefinitely, processing commands as they come in. It also sends acknowledgments back to the requesting task if an acknowledgment task handle is provided in the command structure.  <a href="BS__airport_8ino.html#a2ddbc3fa1feb6d17d404b16858230b73">More...</a><br /></td></tr>
+<tr class="separator:a2ddbc3fa1feb6d17d404b16858230b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ee72dcdcd7166d35e14fe44fca09252"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BS__airport_8ino.html#a0ee72dcdcd7166d35e14fe44fca09252">setupMotors</a> ()</td></tr>
-<tr class="memdesc:a0ee72dcdcd7166d35e14fe44fca09252"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the motors with initial configurations.  <a href="BS__airport_8ino.html#a0ee72dcdcd7166d35e14fe44fca09252">More...</a><br /></td></tr>
+<tr class="memdesc:a0ee72dcdcd7166d35e14fe44fca09252"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the DYNAMIXEL motors with the desired configurations. This includes:  <a href="BS__airport_8ino.html#a0ee72dcdcd7166d35e14fe44fca09252">More...</a><br /></td></tr>
 <tr class="separator:a0ee72dcdcd7166d35e14fe44fca09252"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0bc5605a4658a88971c79432f702183"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BS__airport_8ino.html#ad0bc5605a4658a88971c79432f702183">sequence</a> ()</td></tr>
-<tr class="memdesc:ad0bc5605a4658a88971c79432f702183"><td class="mdescLeft">&#160;</td><td class="mdescRight">Full sequence of moving the battery down, switching sides and moving it up again.  <a href="BS__airport_8ino.html#ad0bc5605a4658a88971c79432f702183">More...</a><br /></td></tr>
-<tr class="separator:ad0bc5605a4658a88971c79432f702183"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4a7316a51b17d0f691bb3e33b95a5ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BS__airport_8ino.html#ad4a7316a51b17d0f691bb3e33b95a5ad">calibrate</a> ()</td></tr>
-<tr class="memdesc:ad4a7316a51b17d0f691bb3e33b95a5ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calibrates the lifting motors (setscrews) using physical buttons.  <a href="BS__airport_8ino.html#ad4a7316a51b17d0f691bb3e33b95a5ad">More...</a><br /></td></tr>
-<tr class="separator:ad4a7316a51b17d0f691bb3e33b95a5ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b18b690248633c7ebadafca3f735b57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BS__airport_8ino.html#a0b18b690248633c7ebadafca3f735b57">swapIndefinitely</a> ()</td></tr>
+<tr class="memdesc:a0b18b690248633c7ebadafca3f735b57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps the batteries indefinitely for testing purposes. The function waits for a button press to start the swapping sequence, and then continuously executes the sequence function in an infinite loop.  <a href="BS__airport_8ino.html#a0b18b690248633c7ebadafca3f735b57">More...</a><br /></td></tr>
 <tr class="separator:a0b18b690248633c7ebadafca3f735b57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ad4a7316a51b17d0f691bb3e33b95a5ad" name="ad4a7316a51b17d0f691bb3e33b95a5ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4a7316a51b17d0f691bb3e33b95a5ad">&#9670;&#160;</a></span>calibrate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void calibrate </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calibrates the lifting motors (setscrews) using physical buttons. </p>
-<p >Each motor has a dedicated button (CALIBRATION_BUTTON_1 for DXL_LIFT1 and CALIBRATION_BUTTON_2 for DXL_LIFT2). The motors move upwards until their respective button is pressed, at which point they stop. After both motors have been calibrated, they are set to their default positions. </p>
-
-</div>
-</div>
 <a id="afe461d27b9c48d5921c00d521181f12f" name="afe461d27b9c48d5921c00d521181f12f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afe461d27b9c48d5921c00d521181f12f">&#9670;&#160;</a></span>loop()</h2>
 
@@ -162,32 +143,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Default Arduino loop function. Not used, as RTOS tasks are used instead. </p>
-
-</div>
-</div>
-<a id="ad0bc5605a4658a88971c79432f702183" name="ad0bc5605a4658a88971c79432f702183"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0bc5605a4658a88971c79432f702183">&#9670;&#160;</a></span>sequence()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void sequence </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Full sequence of moving the battery down, switching sides and moving it up again. </p>
-<p >The sequence consists of the following steps:</p><ol type="1">
-<li>Move the battery down.</li>
-<li>Switch the lock state of the top side.</li>
-<li>Rotate to the opposite side.</li>
-<li>Switch the lock state of the new top side.</li>
-<li>Move the battery up. </li>
-</ol>
 
 </div>
 </div>
@@ -225,7 +180,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets up the motors with initial configurations. </p>
+<p>Sets up the DYNAMIXEL motors with the desired configurations. This includes: </p>
+<ul>
+<li>Setting the profile acceleration and velocity for smooth movements</li>
+<li>Configuring the motors to track absolute multi-turn positions</li>
+<li>Setting the homing offset for the motors to ensure they start from a known position</li>
+<li>Turning on the torque after configuration to enable motor movement The function iterates through all motors (both lift and rotation) to apply the necessary settings </li>
+</ul>
 
 </div>
 </div>
@@ -243,6 +204,34 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Swaps the batteries indefinitely for testing purposes. The function waits for a button press to start the swapping sequence, and then continuously executes the sequence function in an infinite loop. </p>
+
+</div>
+</div>
+<a id="a2ddbc3fa1feb6d17d404b16858230b73" name="a2ddbc3fa1feb6d17d404b16858230b73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ddbc3fa1feb6d17d404b16858230b73">&#9670;&#160;</a></span>TaskMotor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TaskMotor </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pvParameters</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Acts as the only interface for communicating with the DYNAMIXEL motors. It listens for motor commands on a queue and executes them sequentially. The task runs indefinitely, processing commands as they come in. It also sends acknowledgments back to the requesting task if an acknowledgment task handle is provided in the command structure. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pvParameters</td><td>No parameters are passed to this task. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -262,10 +251,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Logging task that periodically reads motor data and logs it. </p>
-<p >This task reads the position and current of each motor every 100 ms and logs the data using the logging utility. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Periodically reads motor data and logs it. This includes: </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pvParameters</td><td>Pointer to task parameters (not used). </td></tr>
+    <tr><td class="paramname">pvParameters</td><td>No parameters are passed to this task.<ul>
+<li>Motor positions</li>
+<li>Motor currents</li>
+<li>Motor temperatures The task runs indefinitely with a delay between each logging cycle to avoid overwhelming the system with logs </li>
+</ul>
+</td></tr>
   </table>
   </dd>
 </dl>
@@ -314,8 +308,40 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Setup task that performs initial setup of motors and system. </p>
-<p >This task sets up the motors, initializes the mutex for DXL communication, and starts the logging and main loop tasks. Once setup is complete, this task deletes itself. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Performs essential setup for the system, including: </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pvParameters</td><td>No parameters are passed to this task.<ul>
+<li>Setting up pins</li>
+<li>Initializing serial communication</li>
+<li>Setting up the DYNAMIXEL motors</li>
+<li>Calibrating the system if not in manual mode After setup is complete, it starts the main loop, logging, and watchdog tasks, and then deletes itself as it is no longer needed. </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0ceebcabbcebae106d0e6f813385b8ae" name="a0ceebcabbcebae106d0e6f813385b8ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ceebcabbcebae106d0e6f813385b8ae">&#9670;&#160;</a></span>vTaskWatchdog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vTaskWatchdog </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>parameter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Watchdog task that periodically performs a health-check. </p>
+<p >This task pings all the motors and halts the system if any of them doesn't respond. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pvParameters</td><td>Pointer to task parameters (not used). </td></tr>
   </table>
